@@ -5,7 +5,7 @@
 GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19。测试阶段免费。它最终将成为付费软件，并/或将包括提供额外的基于订阅的付费检查。间歇泉玩家完全免费。
 
 ### 通过终端/命令提示符编译 (terminal/command prompt)
-1. git clone https://github.com/GrimAnticheat/Grim.git (or click the green code button, download ZIP, then unzip it.)
+1. git clone https://github.com/GrimAnticheat/Grim.git (或点击Download代码按钮，下载 ZIP，然后解压缩。)
 2. cd Grim
 3. gradlew build
 4. The final jar is located in build/libs
@@ -19,50 +19,50 @@ GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19�
 
 ### 运动模拟引擎
 
-* We have a 1:1 replication of the player's possible movements
-* This covers everything from basic walking, swimming, knockback, cobwebs, to bubble columns
-* It even covers riding entities from boats to pigs to striders
-* Built upon covering edge cases to confirm accuracy
-* 1.13+ clients on 1.13+ servers, 1.12- clients on 1.13+ servers, 1.13+ clients on 1.12- servers, and 1.12- clients on 1.12- servers are all supported regardless of the large technical changes between these versions.
-* The order of collisions depends on the client version and is correct
-* Accounts for minor bounding box differences between versions, for example:
-    * Single glass panes will be a + shape for 1.7-1.8 players and * for 1.9+ players
-    * 1.13+ clients on 1.8 servers see the + glass pane hitbox due to ViaVersion
-    * Many other blocks have this extreme attention to detail.
-    * Waterlogged blocks do not exist for 1.12 or below players
-    * Blocks that do not exist in the client's version use ViaVersion's replacement block
-    * Block data that cannot be translated to previous versions is replaced correctly
-    * All vanilla collision boxes have been implemented
+* 我们对玩家可能的动作进行了 1:1 的复制
+* 涵盖了从基本的行走、游泳、击退、蜘蛛网到气泡柱的所有动作
+* 甚至涵盖了从船、猪到黾的骑乘实体
+* 建立在覆盖边缘情况以确认准确性的基础上
+* 支持 1.13+ 服务器上的 1.13+ 客户端、1.13+ 服务器上的 1.12- 客户端、1.12- 服务器上的 1.13+ 客户端和 1.12- 服务器上的 1.12- 客户端，无论这些版本之间的技术变化有多大。
+* 碰撞顺序取决于客户端版本，并且是正确的
+* 考虑到不同版本之间边框的细微差别，例如
+    * 对于 1.7-1.8 版本的玩家，单个玻璃窗格将是 "+"形，而对于 1.9+ 版本的玩家，则是 "*"形。
+    * 由于 ViaVersion 的原因，1.8 服务器上的 1.13+ 客户端会看到 + 玻璃窗格命中框
+    * 许多其他区块也有这种对细节的极度关注。
+    * 1.12 或以下版本的玩家不存在积水区块
+    * 客户端版本中不存在的区块使用 ViaVersion 的替代区块
+    * 无法转换到以前版本的块数据会被正确替换
+    * 已实现所有虚构碰撞盒
 
-### Fully asynchronous and multithreaded design
+### 完全异步和多线程设计
 
-* All movement checks and the overwhelming majority of listeners run on the netty thread
-* The anticheat can scale to many hundreds of players, if not more
-* Thread safety is carefully thought out
-* The next core allows for this design
+* 所有移动检查和绝大多数侦听器都在网状线程上运行
+* anticheat 可扩展至数百名玩家，甚至更多
+* 线程安全经过仔细考虑
+* 下一个核心允许这种设计
 
-### Full world replication
+### 全 World 复制
 
-* The anticheat keeps a replica of the world for each player
-* The replica is created by listening to chunk data packets, block places, and block changes
-* On all versions, chunks are compressed to 16-64 kb per chunk using palettes
-* Using this cache, the anticheat can safely access the world state
-* Per player, the cache allows for multithreaded design
-* Sending players fake blocks with packets is safe and does not lead to falses
-* The world is recreated for each player to allow lag compensation
-* Client sided blocks cause no issues with packet based blocks. Block glitching does not false the anticheat.
+* anticheat 为每个玩家保留一个世界副本
+* 通过监听块数据包、块位置和块变化来创建副本
+* 在所有版本中，使用调色板将每个块压缩到 16-64 kb
+* 使用该缓存，反进程可以安全地访问世界状态
+* 每个玩家的缓存允许多线程设计
+* 用数据包向玩家发送假块是安全的，不会导致伪造
+* 为每个玩家重新创建世界，允许延迟补偿
+* 客户端区块与基于数据包的区块不会产生任何问题。区块闪烁不会导致反击失误。
 
-### Latency compensation
+### 延迟补偿 Lags
 
-* World changes are queued until they reach the player
-* This means breaking blocks under a player does not false the anticheat
-* Everything from flying status to movement speed will be latency compensated
+* 世界变化在到达玩家之前会排队等候
+* 这意味着打破玩家脚下的方块不会导致 anticheat 出错。
+* 从飞行状态到移动速度都将得到延迟补偿
 
-### Inventory compensation
+### 库存补偿
 
-* The player's inventory is tracked to prevent ghost blocks at high latency, and other errors
+* 对玩家的库存进行追踪，以防止在高延迟时出现鬼块和其他错误
 
-### Secure by design, not obscurity
+### 设计安全，而非隐蔽安全
 
-* All systems are designed to be highly secure and mathematically impossible to bypass
-* For example, the prediction engine knows all possible movements and cannot be bypassed
+* 所有系统的设计都高度安全，在数学上无法绕过
+* 例如，预测引擎知道所有可能的动作，无法绕过
