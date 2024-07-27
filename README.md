@@ -4,20 +4,20 @@
 
 GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19。测试阶段免费。它最终将成为付费软件，并/或将包括提供额外的基于订阅的付费检查。间歇泉玩家完全免费。
 
-### Compiling through terminal/command prompt
+### 通过终端/命令提示符编译 (terminal/command prompt)
 1. git clone https://github.com/GrimAnticheat/Grim.git (or click the green code button, download ZIP, then unzip it.)
 2. cd Grim
 3. gradlew build
 4. The final jar is located in build/libs
 
-### API Information
-Grim's API allows you to integrate Grim into your own plugins. For more information, check out the API's GitHub repository [here](https://github.com/GrimAnticheat/GrimAPI).
+### 应用程序接口信息 API Information
+通过 Grim 的 API，您可以将 Grim 集成到自己的插件中。欲了解更多信息，请访问 API 的 GitHub 存储库 [此处](https://github.com/GrimAnticheat/GrimAPI)。
 
 ## Grim supremacy
 
-Here are the main cores that make Grim stand out against other anticheats
+以下是让GACP在与其他反饥饿游戏的竞争中脱颖而出的主要核心要素
 
-### Movement Simulation Engine
+### 运动模拟引擎
 
 * We have a 1:1 replication of the player's possible movements
 * This covers everything from basic walking, swimming, knockback, cobwebs, to bubble columns
