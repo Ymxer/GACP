@@ -1,4 +1,4 @@
-# GrimAC PLUS
+# GrimAC PLUS (98.54% Simplified-Chinese)
 
 该项目 2.0（开源）分支的功能已完成。如果您想进行错误修复或增强，但又无法赞助相关工作，我们欢迎您提出拉取请求。您可以加入 [discord](https://discord.com/invite/kqQAhTmkUF)，查看 jar 发布和更新日志。
 
@@ -7,8 +7,8 @@ GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19�
 ### 通过终端/命令提示符编译 (terminal/command prompt)
 1. git clone https://github.com/GrimAnticheat/Grim.git (或点击Download代码按钮，下载 ZIP，然后解压缩。)
 2. cd Grim
-3. gradlew build
-4. The final jar is located in build/libs
+3. 构建 build
+4. 最终 jar 位于 build/libs 目录中
 
 ### 应用程序接口信息 API Information
 通过 Grim 的 API，您可以将 Grim 集成到自己的插件中。欲了解更多信息，请访问 API 的 GitHub 存储库 [此处](https://github.com/GrimAnticheat/GrimAPI)。
