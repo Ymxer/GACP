@@ -66,3 +66,10 @@ GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19�
 
 * 所有系统的设计都高度安全，在数学上无法绕过
 * 例如，预测引擎知道所有可能的动作，无法绕过
+
+### GrimAC PLUS 和 GrimAC 有何区别
+
+* 对比 GrimAC 我们升级了算法 取消了GrimAC的繁杂检测设计
+* 轻量化 以及 性能优化
+* 误报率大大降低
+* (请注意 GACP 是 GrimAC 的 一个分支)
