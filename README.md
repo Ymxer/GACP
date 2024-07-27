@@ -1,8 +1,8 @@
 # GrimAC PLUS
 
-This project is considered feature complete for the 2.0 (open-source) branch of this project. If you would like a bugfix or enhancement and cannot sponsor the work, pull requests are welcome. You can join the [discord](https://discord.com/invite/kqQAhTmkUF) for jar releases & changelogs.
+该项目 2.0（开源）分支的功能已完成。如果您想进行错误修复或增强，但又无法赞助相关工作，我们欢迎您提出拉取请求。您可以加入 [discord](https://discord.com/invite/kqQAhTmkUF)，查看 jar 发布和更新日志。
 
-GrimAC is an open source Minecraft anticheat designed for 1.20 and supports 1.8-1.20. It is free while in beta. It will eventually become paid and/or will include offering additional subscription based paid checks. Geyser players are fully exempt.
+GrimAC PLUS 是为 1.8 版设计的开源 Minecraft AntiCheat，支持 1.8-1.19。测试阶段免费。它最终将成为付费软件，并/或将包括提供额外的基于订阅的付费检查。间歇泉玩家完全免费。
 
 ### Compiling through terminal/command prompt
 1. git clone https://github.com/GrimAnticheat/Grim.git (or click the green code button, download ZIP, then unzip it.)
